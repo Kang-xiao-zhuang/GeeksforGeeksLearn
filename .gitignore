@@ -46,7 +46,6 @@ build/
 *.jar
 *.war
 *.nar
-*.ear
 *.zip
 *.tar.gz
 *.rar
