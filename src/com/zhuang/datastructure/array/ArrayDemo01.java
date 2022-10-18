@@ -33,10 +33,13 @@ public class ArrayDemo01 {
         int[] temp = new int[arr.length];
         // 跟踪temp数组的索引
         int k = 0;
+        // 索引d后面的数添加到temp数组中
+        // temp[] 3 4 5 6 7
         for (int i = d; i < arr.length; i++) {
             temp[k] = arr[i];
             k++;
         }
+        // temp[] 3 4 5 6 7 1 2
         for (int i = 0; i < d; i++) {
             temp[k] = arr[i];
             k++;
@@ -51,6 +54,7 @@ public class ArrayDemo01 {
         int n = arr.length;
         // 定义指针
         int point = 1;
+        // 循环几次 这里d为2 就循环2次 往后依次移动两次
         while (point <= d) {
             // 把第一个数拿到 准备赋值给尾部的值
             int last = arr[0];
