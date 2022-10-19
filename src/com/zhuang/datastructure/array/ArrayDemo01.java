@@ -150,27 +150,44 @@ public class ArrayDemo01 {
         }
     }
 
+    /**
+     * https://www.geeksforgeeks.org/program-for-array-rotation-continued-reversal-algorithm/
+     *
+     * @param arr 数组
+     * @param d   开始旋转的索引
+     */
     public static void leftRotate2(int[] arr, int d) {
         if (d == 0) {
             return;
         }
         int n = arr.length;
         // in case the rotating factor is
-        // greater than array length
+        // greater than array length、
+        // 防止旋转大于数组的长度
         d = d % n;
+        //  0-d 左边旋转
         reverseArray(arr, 0, d - 1);
+        // d-n-1 右边旋转
         reverseArray(arr, d, n - 1);
+        // 整体旋转
         reverseArray(arr, 0, n - 1);
         printThearray(arr);
     }
 
-
+    /**
+     * @param arr   数组
+     * @param start 开始索引
+     * @param end   结束索引
+     */
     public static void reverseArray(int[] arr, int start, int end) {
         int temp;
+        // 条件是 开始索引小于结束索引
         while (start < end) {
+            // temp存储 交换值
             temp = arr[start];
             arr[start] = arr[end];
             arr[end] = temp;
+            // 索引改变
             start++;
             end--;
         }
